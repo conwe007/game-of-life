@@ -1,4 +1,4 @@
-import {ctx, width, height} from '../main.js';
+import {ctx} from '../main.js';
 
 const STATE_DEAD = 0;
 const STATE_ALIVE = 0;

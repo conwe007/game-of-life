@@ -1,5 +1,5 @@
 import Cell from './cell.js';
-import {ctx, width, height} from '../main.js';
+import {width, height} from '../main.js';
 
 const NUM_ROWS = 32;
 const NUM_COLS = 32;

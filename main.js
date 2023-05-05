@@ -7,7 +7,8 @@ const ctx = canvas.getContext('2d');
 
 const width = canvas.width = window.innerWidth;
 const height = canvas.height = window.innerHeight;
-
+console.log(width);
+console.log(height);
 const grid = new Grid();
 
 grid.randomize(0.5);
