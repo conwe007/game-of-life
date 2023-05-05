@@ -19,7 +19,7 @@ function loop()
     ctx.fillRect(0, 0, width, height);
 
     grid.update();
-    grid.drawChanged();
+    grid.drawAll();
 
     requestAnimationFrame(loop);
 }
