@@ -23,9 +23,9 @@ export default class Grid
 
     randomize(odds_alive)
     {
-        for(let index_row = row - 1; index_row <= row + 1; index_row++)
+        for(let index_row = 0; index_row < NUM_ROWS; index_row++)
         {
-            for(let index_col = col - 1; index_col <= col + 1; index_col++)
+            for(let index_col = 0; index_col < NUM_COLS; index_col++)
             {
                 if(Math.random() < odds_alive)
                 {
