@@ -8,7 +8,7 @@ const ctx = canvas.getContext('2d');
 const width = canvas.width = window.innerWidth;
 const height = canvas.height = window.innerHeight;
 
-const DELAY_60HZ_MS = 17;
+const DELAY = 100;
 
 let grid = new Grid();
 
@@ -23,9 +23,9 @@ function loop()
     ctx.fillRect(0, 0, width, height);
 
     grid = grid.update();
-    grid.drawAll();
+    grid.drawChanged();
 
-    while(Date.now() < start + DELAY_60HZ_MS);
+    while(Date.now() < start + DELAY);
 
     requestAnimationFrame(loop);
 }
