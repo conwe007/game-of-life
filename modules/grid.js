@@ -97,6 +97,7 @@ export default class Grid
                 if((this.cells[index_row][index_col].isAlive() && (num_alive_neighbors == 2 || num_alive_neighbors == 3)) ||
                     (!this.cells[index_row][index_col].isAlive() && num_alive_neighbors == 3))
                 {
+                    console.log(index_row + ',' + index_col);
                     grid.cells[index_row][index_col].setAlive();
                 }
                 else
