@@ -66,7 +66,7 @@ export default class Grid
             for(let index_col = col - 1; index_col <= col + 1; index_col++)
             {
                 // roll over if neighbor is outside grid bounds
-                if(this.cells[(index_col + NUM_COLS) % NUM_COLS][(index_row + NUM_ROWS) % NUM_ROWS].isAlive())
+                if(this.cells[((index_col % NUM_COLS) + NUM_COLS) % NUM_COLS][((index_row % NUM_ROWS) + NUM_ROWS) % NUM_ROWS].isAlive())
                 {
                     num_alive_neighbors++;
                 }
