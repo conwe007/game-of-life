@@ -20,8 +20,8 @@ function loop()
 {
     const start = Date.now();
 
-    ctx.fillStyle = "rgba(0, 0, 0, 0.25)";
-    ctx.fillRect(0, 0, width, height);
+    // ctx.fillStyle = "rgba(0, 0, 0, 0.25)";
+    // ctx.fillRect(0, 0, width, height);
 
     // grid = grid.update();
     // grid.drawAll();

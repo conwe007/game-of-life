@@ -1,8 +1,8 @@
 import Cell from './cell.js';
 import {width, height} from '../main.js';
 
-const NUM_ROWS = 128;
-const NUM_COLS = 128;
+const NUM_ROWS = 4;
+const NUM_COLS = 4;
 
 export default class Grid
 {
