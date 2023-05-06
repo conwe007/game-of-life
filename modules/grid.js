@@ -6,22 +6,39 @@ const NUM_COLS = 32;
 
 export default class Grid
 {
-    constructor()
+    constructor(grid)
     {
-        this.cells = [];
-
-        for(let index_row = 0; index_row < NUM_ROWS; index_row++)
+        if(grid == null)
         {
-            this.cells[index_row] = [];
+            this.cells = [];
 
-            for(let index_col = 0; index_col < NUM_COLS; index_col++)
+            for(let index_row = 0; index_row < NUM_ROWS; index_row++)
             {
-                const cell_width = width / NUM_COLS;
-                const cell_height = height / NUM_ROWS;
-                const cell_x = index_col * cell_width;
-                const cell_y = index_row * cell_height;
+                this.cells[index_row] = [];
+    
+                for(let index_col = 0; index_col < NUM_COLS; index_col++)
+                {
+                    const cell_width = width / NUM_COLS;
+                    const cell_height = height / NUM_ROWS;
+                    const cell_x = index_col * cell_width;
+                    const cell_y = index_row * cell_height;
+    
+                    this.cells[index_row][index_col] = new Cell(cell_x, cell_y, cell_width, cell_height);
+                }
+            }
+        }
+        else
+        {
+            this.cells = [];
 
-                this.cells[index_row][index_col] = new Cell(cell_x, cell_y, cell_width, cell_height);
+            for(let index_row = 0; index_row < NUM_ROWS; index_row++)
+            {
+                this.cells[index_row] = [];
+    
+                for(let index_col = 0; index_col < NUM_COLS; index_col++)
+                {
+                    this.cells[index_row][index_col] = grid.cells[index_row][index_col].clone();
+                }
             }
         }
     }
@@ -68,7 +85,45 @@ export default class Grid
 
     update()
     {
+        const grid = new Grid(this);
 
+        for(let index_row = 0; index_row < NUM_ROWS; index_row++)
+        {
+            for(let index_col = 0; index_col < NUM_COLS; index_col++)
+            {
+                const num_alive_neighbors = this.numAliveNeighbors(index_row, index_col);
+
+                // set alive if:
+                // cell is alive and has 2 or 3 alive neighbors or
+                // cell is dead and has 3 alive neighbors
+                if((this.cells[index_row][index_col].isAlive() && (num_alive_neighbors == 2 || num_alive_neighbors == 3)) ||
+                    (!this.cells[index_row][index_col].isAlive() && num_alive_neighbors == 3))
+                {
+                    grid.cells[index_row][index_col].setAlive();
+                }
+                else
+                {
+                    grid.cells[index_row][index_col].setDead();
+                }
+            }
+        }
+
+        return grid;
+    }
+
+    clone()
+    {
+        const grid = new Grid();
+
+        for(let index_row = 0; index_row < NUM_ROWS; index_row++)
+        {
+            for(let index_col = 0; index_col < NUM_COLS; index_col++)
+            {
+                grid.cells[index_row][index_col] = this.cells[index_row][index_col].clone();
+            }
+        }
+
+        return grid;
     }
 
     drawAll()

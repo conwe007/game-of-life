@@ -45,6 +45,21 @@ export default class Cell
         return this.state != this.state_previous;
     }
 
+    clone()
+    {
+        const cell = new Cell()
+
+        cell.x = this.x;
+        cell.y = this.y;
+        cell.width = this.width;
+        cell.height = this.height;
+        cell.color = this.color;
+        cell.state = this.state;
+        cell.state_previous = this.state_previous;
+
+        return cell;
+    }
+
     draw()
     {
         ctx.beginPath();
