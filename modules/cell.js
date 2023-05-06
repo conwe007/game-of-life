@@ -1,7 +1,7 @@
 import {ctx} from '../main.js';
 
 const STATE_DEAD = 0;
-const STATE_ALIVE = 0;
+const STATE_ALIVE = 1;
 
 export default class Cell
 {
