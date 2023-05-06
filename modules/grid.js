@@ -16,7 +16,12 @@ export default class Grid
 
             for(let index_col = 0; index_col < NUM_COLS; index_col++)
             {
-                this.cells[index_row][index_col] = new Cell(index_col, index_row, width / NUM_COLS, height / NUM_ROWS);
+                const cell_width = width / NUM_COLS;
+                const cell_height = height / NUM_ROWS;
+                const cell_x = index_col * cell_width;
+                const cell_y = index_row * cell_height;
+
+                this.cells[index_row][index_col] = new Cell(cell_x, cell_y, cell_width, cell_height);
             }
         }
     }
