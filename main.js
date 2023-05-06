@@ -9,7 +9,7 @@ const width = canvas.width = window.innerWidth;
 const height = canvas.height = window.innerHeight;
 console.log(width);
 console.log(height);
-const grid = new Grid();
+let grid = new Grid();
 
 grid.randomize(0.5);
 grid.drawAll();
