@@ -31,6 +31,7 @@ export default class Grid
                 {
                     this.cells[index_row][index_col].setAlive();
                 }
+                console.log(this.cells[index_row][index_col].toString());
             }
         }
     }

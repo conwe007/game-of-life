@@ -51,4 +51,15 @@ export default class Cell
         ctx.fillStyle = this.color;
         ctx.fillRect(this.x, this.y, this.width, this.height);
     }
+
+    toString()
+    {
+        let output = '';
+
+        output += '(' + this.x + ',' + this.y + ')\n';
+        output += 'w: ' + this.width + ', h: ' + this.height + '\n';
+        output += 'state: ' + this.state;
+
+        return output;
+    }
 }
