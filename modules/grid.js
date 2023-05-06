@@ -53,7 +53,6 @@ export default class Grid
                 {
                     this.cells[index_row][index_col].setAlive();
                 }
-                console.log(this.cells[index_row][index_col].toString());
             }
         }
     }
@@ -92,13 +91,14 @@ export default class Grid
             for(let index_col = 0; index_col < NUM_COLS; index_col++)
             {
                 const num_alive_neighbors = this.numAliveNeighbors(index_row, index_col);
-
+                console.log(num_alive_neighbors);
                 // set alive if:
                 // cell is alive and has 2 or 3 alive neighbors or
                 // cell is dead and has 3 alive neighbors
                 if((this.cells[index_row][index_col].isAlive() && (num_alive_neighbors == 2 || num_alive_neighbors == 3)) ||
                     (!this.cells[index_row][index_col].isAlive() && num_alive_neighbors == 3))
                 {
+                    console.log(this.cells[index_row][index_col]);
                     grid.cells[index_row][index_col].setAlive();
                 }
                 else
