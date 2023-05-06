@@ -11,7 +11,7 @@ export default class Cell
         this.y = y;
         this.width = width;
         this.height = height;
-        this.color = "white";
+        this.color = "black";
         this.state = STATE_DEAD;
         this.state_previous = STATE_DEAD;
     }
@@ -20,14 +20,14 @@ export default class Cell
     {
         this.state_previous = this.state;
         this.state = STATE_ALIVE;
-        this.color = "black";
+        this.color = "white";
     }
 
     setDead()
     {
         this.state_previous = this.state;
         this.state = STATE_DEAD;
-        this.color = "white";
+        this.color = "black";
     }
 
     isAlive()

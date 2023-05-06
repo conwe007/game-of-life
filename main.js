@@ -23,7 +23,7 @@ function loop()
     ctx.fillRect(0, 0, width, height);
 
     grid = grid.update();
-    grid.drawChanged();
+    grid.drawAll();
 
     while(Date.now() < start + DELAY);
 
