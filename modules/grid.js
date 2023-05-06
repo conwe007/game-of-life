@@ -67,7 +67,7 @@ export default class Grid
             for(let index_col = col - 1; index_col <= col + 1; index_col++)
             {
                 // roll over if neighbor is outside grid bounds
-                if(cells[(index_col + NUM_COLS) % NUM_COLS][(index_row + NUM_ROWS) % NUM_ROWS].isAlive())
+                if(this.cells[(index_col + NUM_COLS) % NUM_COLS][(index_row + NUM_ROWS) % NUM_ROWS].isAlive())
                 {
                     num_alive_neighbors++;
                 }
@@ -75,7 +75,7 @@ export default class Grid
         }
 
         // uncount the middle cell if it is alive(should only be counting 8 neighbors)
-        if(cells[col][row].isAlive())
+        if(this.cells[col][row].isAlive())
         {
             num_alive_neighbors--;
         }
