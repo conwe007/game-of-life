@@ -13,7 +13,6 @@ const DELAY_60HZ_MS = 17;
 let grid = new Grid();
 
 grid.randomize(0.5);
-grid = grid.update();
 grid.drawAll();
 
 function loop()
@@ -23,8 +22,8 @@ function loop()
     ctx.fillStyle = "rgba(0, 0, 0, 0.25)";
     ctx.fillRect(0, 0, width, height);
 
-    // grid = grid.update();
-    // grid.drawAll();
+    grid = grid.update();
+    grid.drawAll();
 
     while(Date.now() < start + DELAY_60HZ_MS);
 
