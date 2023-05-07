@@ -37,6 +37,6 @@ function loop()
     requestAnimationFrame(loop);
 }
 
-//loop();
+loop();
 
 export {ctx, width, height};
