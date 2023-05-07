@@ -65,8 +65,6 @@ export default class Grid
         {
             for(let index_col = col - 1; index_col <= col + 1; index_col++)
             {
-                // console.log(index_row + ' ' + ((index_row % NUM_ROWS) + NUM_ROWS) % NUM_ROWS);
-                // console.log(index_col + ' ' + ((index_col % NUM_COLS) + NUM_COLS) % NUM_COLS);
                 // roll over if neighbor is outside grid bounds
                 if(this.cells[((index_row % NUM_ROWS) + NUM_ROWS) % NUM_ROWS][((index_col % NUM_COLS) + NUM_COLS) % NUM_COLS].isAlive())
                 {
@@ -76,7 +74,7 @@ export default class Grid
         }
 
         // uncount the middle cell if it is alive(should only be counting 8 neighbors)
-        if(this.cells[col][row].isAlive())
+        if(this.cells[row][col].isAlive())
         {
             num_alive_neighbors--;
         }
@@ -93,13 +91,13 @@ export default class Grid
             for(let index_col = 0; index_col < NUM_COLS; index_col++)
             {
                 const num_alive_neighbors = this.numAliveNeighbors(index_row, index_col);
+
                 // set alive if:
                 // cell is alive and has 2 or 3 alive neighbors or
                 // cell is dead and has 3 alive neighbors
                 if((this.cells[index_row][index_col].isAlive() && (num_alive_neighbors == 2 || num_alive_neighbors == 3)) ||
                     (!this.cells[index_row][index_col].isAlive() && num_alive_neighbors == 3))
                 {
-                    console.log(index_row + ',' + index_col);
                     grid.cells[index_row][index_col].setAlive();
                 }
                 else
