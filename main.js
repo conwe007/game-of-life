@@ -15,11 +15,10 @@ let grid = new Grid();
 grid.randomize(0.5);
 grid.update();
 grid.drawAll();
-
-for(let i = -5; i < 5; i++)
+const NUM_I = 4;
+for(let i = -1; i < NUM_I; i++)
 {
-    console.log(i);
-    console.log(((i % 5) + 5) % 5);
+    console.log(NUM_I + ' ' + ((i % 5) + 5) % 5);
 }
 
 function loop()
