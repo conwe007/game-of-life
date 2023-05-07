@@ -18,8 +18,8 @@ let grid = new Grid();
 grid.cells[0][0].setAlive();
 grid.cells[0][1].setAlive();
 grid.cells[1][1].setAlive();
-grid.numAliveNeighbors(0,0);
-grid.numAliveNeighbors(3,3);
+console.log(grid.numAliveNeighbors(0,0));
+console.log(grid.numAliveNeighbors(3,3));
 grid.drawAll();
 
 function loop()
