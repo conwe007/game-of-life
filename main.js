@@ -13,13 +13,10 @@ const DELAY = 100;
 let grid = new Grid();
 
 grid.randomize(0.5);
-grid.update();
-grid.drawAll();
-const NUM_I = 4;
-for(let i = -1; i < NUM_I; i++)
-{
-    console.log(NUM_I + ' ' + ((i % 5) + 5) % 5);
-}
+// grid.update();
+// grid.drawAll();
+grid.numAliveNeighbors(0,0);
+grid.numAliveNeighbors(3,3);
 
 function loop()
 {
