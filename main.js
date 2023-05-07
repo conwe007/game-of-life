@@ -15,7 +15,7 @@ const DELAY = 100;
 
 let grid = new Grid();
 
-grid.randomize(0.5);
+grid.randomize(0.2);
 grid.update();
 grid.drawAll();
 // grid.cells[0][0].setAlive();
