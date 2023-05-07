@@ -5,8 +5,8 @@ import Grid from './modules/grid.js';
 const canvas = document.querySelector('canvas');
 const ctx = canvas.getContext('2d');
 
-const width = canvas.width = window.innerWidth;
-const height = canvas.height = window.innerHeight;
+const width = 1024;//canvas.width = window.innerWidth;
+const height = 1024;//canvas.height = window.innerHeight;
 
 ctx.fillStyle = "rgba(0, 0, 0, 0.25)";
 ctx.fillRect(0, 0, width, height);
@@ -32,7 +32,7 @@ function loop()
     grid = grid.update();
     grid.drawChanged();
 
-    while(Date.now() < start + DELAY);
+    //while(Date.now() < start + DELAY);
 
     requestAnimationFrame(loop);
 }
