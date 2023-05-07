@@ -8,6 +8,9 @@ const ctx = canvas.getContext('2d');
 const width = canvas.width = window.innerWidth;
 const height = canvas.height = window.innerHeight;
 
+ctx.fillStyle = "rgba(0, 0, 0, 0.25)";
+ctx.fillRect(0, 0, width, height);
+
 const DELAY = 100;
 
 let grid = new Grid();
@@ -26,11 +29,8 @@ function loop()
 {
     const start = Date.now();
 
-    ctx.fillStyle = "rgba(0, 0, 0, 0.25)";
-    ctx.fillRect(0, 0, width, height);
-
     grid = grid.update();
-    grid.drawAll();
+    grid.drawChanged();
 
     while(Date.now() < start + DELAY);
 
