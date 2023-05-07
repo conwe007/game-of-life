@@ -7,10 +7,10 @@ export default class Cell
 {
     constructor(x, y, width, height)
     {
-        this.x = x;
-        this.y = y;
-        this.width = width;
-        this.height = height;
+        this.x = Math.round(x);
+        this.y = Math.round(y);
+        this.width = Math.round(width);
+        this.height = Math.round(height);
         this.color = "black";
         this.state = STATE_DEAD;
         this.state_previous = STATE_DEAD;
