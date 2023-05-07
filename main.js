@@ -12,11 +12,15 @@ const DELAY = 100;
 
 let grid = new Grid();
 
-grid.randomize(0.5);
+//grid.randomize(0.5);
 // grid.update();
 // grid.drawAll();
+grid.cells[0][0].setAlive();
+grid.cells[0][1].setAlive();
+grid.cells[1][1].setAlive();
 grid.numAliveNeighbors(0,0);
 grid.numAliveNeighbors(3,3);
+grid.drawAll();
 
 function loop()
 {
