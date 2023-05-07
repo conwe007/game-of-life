@@ -16,6 +16,12 @@ grid.randomize(0.5);
 grid.update();
 grid.drawAll();
 
+for(let i = -5; i < 5; i++)
+{
+    console.log(i);
+    console.log(((i % 5) + 5) % 5);
+}
+
 function loop()
 {
     const start = Date.now();
@@ -31,6 +37,6 @@ function loop()
     requestAnimationFrame(loop);
 }
 
-loop();
+//loop();
 
 export {ctx, width, height};
